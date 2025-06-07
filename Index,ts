@@ -1,0 +1,52 @@
+export  interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+export interface Bus {
+  id: string;
+  name: string;
+  busNumber: string;
+  totalSeats: number;
+  availableSeats: number;
+  type: 'AC' | 'Non-AC' | 'Sleeper' | 'Semi-Sleeper';
+  features: string[];
+  rating: number;
+}
+
+export interface Route {
+  id: string;
+  from: string;
+  to: string;
+  departureTime: string;
+  arrivalTime: string;
+  duration: string;
+  price: number;
+  bus: Bus;
+}
+
+export interface Booking {
+  id: string;
+  userId: string;
+  routeId: string;
+  route: Route;
+  seats: number[];
+  passengerDetails: Passenger[];
+  totalAmount: number;
+  bookingDate: string;
+  status: 'CONFIRMED' | 'CANCELLED' | 'PENDING';
+}
+
+export interface Passenger {
+  name: string;
+  age: number;
+  gender: 'MALE' | 'FEMALE' | 'OTHER';
+  seatNumber: number;
+}
+
+export interface City {
+  id: string;
+  name: string;
+}
+ 
